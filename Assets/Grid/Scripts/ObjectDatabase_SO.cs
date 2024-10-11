@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "New Object Group", menuName = "Create New Object Group")]
 public class ObjectDatabase_SO : ScriptableObject
 {
     public List<ObjectData> objectData;
