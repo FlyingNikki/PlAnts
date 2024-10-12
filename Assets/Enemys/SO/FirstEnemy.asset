@@ -20,6 +20,6 @@ MonoBehaviour:
     <Damage>k__BackingField: 0
     <HP>k__BackingField: 0
     <Range>k__BackingField: 5
-    <Speed>k__BackingField: 10
-    <RotationSpeed>k__BackingField: 15
+    <Speed>k__BackingField: 5
+    <RotationSpeed>k__BackingField: 10
     <TimeBetweenAttacks>k__BackingField: 0

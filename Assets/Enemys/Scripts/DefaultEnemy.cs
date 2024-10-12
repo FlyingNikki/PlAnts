@@ -40,6 +40,12 @@ public class DefaultEnemy : MonoBehaviour
         }
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _enemyData.enemyData[ID].Range);
+    }
+
     private IEnumerator FindNewTarget(float time)
     {
         yield return new WaitForSeconds(time);
