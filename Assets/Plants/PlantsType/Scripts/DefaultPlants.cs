@@ -75,7 +75,7 @@ public class DefaultPlant : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        ActivePlants_Manager.RangeSystem(enemyTag, OrientationPoint, ref target, Range);
+        ActivePlants_Manager.FindATarget(enemyTag, OrientationPoint, ref target, Range);
 
         findTarget = true;
     }

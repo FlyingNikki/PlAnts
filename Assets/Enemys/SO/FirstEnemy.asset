@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aae5e0c4f930a649aa3cb5800cda9f6, type: 3}
+  m_Name: FirstEnemy
+  m_EditorClassIdentifier: 
+  enemyData:
+  - <Name>k__BackingField: DefaultEnemy
+    <Tag>k__BackingField: Enemy
+    <TargetTag>k__BackingField: Plant
+    <BaseTag>k__BackingField: Base
+    <Damage>k__BackingField: 0
+    <HP>k__BackingField: 0
+    <Range>k__BackingField: 5
+    <Speed>k__BackingField: 10
+    <RotationSpeed>k__BackingField: 15
+    <TimeBetweenAttacks>k__BackingField: 0

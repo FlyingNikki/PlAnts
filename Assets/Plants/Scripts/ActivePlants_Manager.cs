@@ -19,10 +19,10 @@ public class ActivePlants_Manager : MonoBehaviour
     }
 
     //**************************************************************************************
-    //**********************************Range System****************************************
+    //**********************************FIND A TARGET***************************************
     //**************************************************************************************
 
-    public static void RangeSystem(string enemyTag, Transform objectTransform, ref Transform target, float range)
+    public static void FindATarget(string enemyTag, Transform objectTransform, ref Transform target, float range)
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float shortestDistance = Mathf.Infinity;
