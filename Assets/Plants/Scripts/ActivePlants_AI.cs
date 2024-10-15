@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivePlants_Manager : MonoBehaviour
+public class ActivePlants_AI : MonoBehaviour
 {
     //**************************************************************************************
     //**********************************Shooting System*************************************
@@ -49,7 +50,7 @@ public class ActivePlants_Manager : MonoBehaviour
     }
 
     //**************************************************************************************
-    //**********************************Look On System**************************************
+    //***************************************Lock On****************************************
     //**************************************************************************************
     public static void LookOn(Transform target, Transform objectTransform, Transform partToRotat, float rotationSpeed)
     {
@@ -59,4 +60,22 @@ public class ActivePlants_Manager : MonoBehaviour
         partToRotat.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
+    //**************************************************************************************
+    //*************************************** HP *******************************************
+    //**************************************************************************************
+    public static void plant_HP(ref int hp, GameManager plant, bool getHited)
+    {
+        if (getHited)
+        {
+            hp--;
+            getHited = false;
+        }
+
+        if (hp <= 0)
+        {
+            Debug.Log("Plant get destroyed!");
+            Destroy(plant, .1f);
+            return;
+        }
+    }
 }
