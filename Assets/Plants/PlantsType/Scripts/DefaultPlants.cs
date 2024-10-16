@@ -38,7 +38,7 @@ public class DefaultPlant : MonoBehaviour
             return;
         }
 
-        ActivePlants_Manager.LookOn(target, OrientationPoint, partToRotat, _plantData.PlantsData[plantID].RotationSpeed);
+        ActivePlants_AI.LookOn(target, OrientationPoint, partToRotat, _plantData.PlantsData[plantID].RotationSpeed);
     }
 
     private void StartShooting()
@@ -46,7 +46,7 @@ public class DefaultPlant : MonoBehaviour
         // Ensure that shooting is not already in progress
         if (shootingCoroutine == null)
         {
-            shootingCoroutine = StartCoroutine(ActivePlants_Manager.ShootingSystem(
+            shootingCoroutine = StartCoroutine(ActivePlants_AI.ShootingSystem(
                 _plantData.PlantsData[plantID].timeBetweenAttacks,
                 _plantData.PlantsData[plantID].bullet,
                 shotingPoint,
@@ -75,7 +75,7 @@ public class DefaultPlant : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        ActivePlants_Manager.FindATarget(enemyTag, OrientationPoint, ref target, Range);
+        ActivePlants_AI.FindATarget(enemyTag, OrientationPoint, ref target, Range);
 
         findTarget = true;
     }

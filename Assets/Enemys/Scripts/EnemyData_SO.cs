@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Enemy Group", menuName = "Create New Enemy Group")]
 public class EnemyData_SO : ScriptableObject
 {
+    [Header("--------> Enemy Data List")]
+    [Tooltip("List of enemies with their respective attributes")]
     public List<EnemyData> enemyData;
 }
 
