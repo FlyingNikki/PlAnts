@@ -19,6 +19,8 @@ public class PlayerStats : MonoBehaviour
     private float thirst;
     private float maxthirst;
 
+    private int level;
+
     //props
     public float Health { get; set; } = 100;
     public float Maxhealth { get; set; } = 100;
@@ -32,6 +34,8 @@ public class PlayerStats : MonoBehaviour
     public float Thirst { get; set; } = 100;
     public float Maxthirst { get; set; } = 100;
 
+    public int Level { get; set; } = 1;
+
     //constructor
 
     public PlayerStats() {
@@ -43,36 +47,49 @@ public class PlayerStats : MonoBehaviour
         maxhunger = Maxhunger;  
         thirst = Thirst;    
         maxthirst = Maxthirst;
+        level = Level;
     }
 
     public void LevelUp() {
+        Level++;
         HealthUP();
         EnduranceUP();
     }
 
-    public void HealthUP() { 
-    
+    public void HealthUP() {
+        switch (Level) {
+            case 1:; break;
+            case 2:; break;
+            case 3:; break;
+            case 4:; break;
+            case 5:; break;
+            case 6:; break;
+            case 7:; break;
+            case 8:; break;
+            case 9:; break;
+            case 10:; break;
+
+        }
     }
 
     public void EnduranceUP() { 
-    
+     
     }
 
     public void GetHunger() {
-    
+        Hunger = Hunger - 10;
     }
 
-    public void Eat(float Food) { 
-    
+    public void Eat(float Food) {
+        Hunger = Hunger + Food;
     }
 
     public void GetThirst() { 
-    
+        Thirst = Thirst - 10;
     }
 
-    public void Drink(float Drink)
-    {
-        
+    public void Drink(float Drink){
+        Thirst = Thirst + Drink;    
     }
 }
 
