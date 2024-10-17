@@ -3,16 +3,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float speed;
-
-
-
     private float countdown = 5f;
 
-    private void Start()
-    {
-
-    }
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(transform.forward * speed * Time.deltaTime);
