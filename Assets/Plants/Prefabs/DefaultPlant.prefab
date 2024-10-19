@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4624041016041917769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shoting Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 8107893119843713623}
   - component: {fileID: 8128417278929835548}
   - component: {fileID: 2932281496151162311}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448948336378526688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PartToRotat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2641052835959287884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OrientationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 1809992541604990296}
   - component: {fileID: 2667815217804125374}
   - component: {fileID: 2736434369669750629}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477264802953863958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlantMobel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 5183781307276827024}
   - component: {fileID: 2086620949891214087}
   - component: {fileID: 1728821145717726682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 4053170135404003086}
   - component: {fileID: 1953368669482206383}
   - component: {fileID: 6747156193976246330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DefaultPlant
   m_TagString: Plant
   m_Icon: {fileID: 0}

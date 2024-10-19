@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Grid_PlacementSystem : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Grid_PlacementSystem : MonoBehaviour
     [SerializeField] private Grid grid;
     [SerializeField] private ObjectDatabase_SO database;
     [SerializeField] private GameObject gridVisualization;
+    [SerializeField] private LayerMask objectLayer;
 
     private int selectedObjectIndex = -1;
 
@@ -30,11 +32,11 @@ public class Grid_PlacementSystem : MonoBehaviour
         }
         gridVisualization.SetActive(true);
         cellIndicator.SetActive(true);
-        inputManager.OnCliced += PlaceStructur;
+        inputManager.OnCliced += PlacesStructure;
         inputManager.OnExit += StopPlacment;
     }
 
-    private void PlaceStructur()
+    private void PlacesStructure()
     {
         if (inputManager.IsPointerOverUI())
         {
@@ -43,8 +45,18 @@ public class Grid_PlacementSystem : MonoBehaviour
 
         Vector3 mousePos = inputManager.GetSelectedMapPosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePos);
+        Vector3 worldPosition = grid.CellToWorld(gridPosition);
+
+        // Check if the placement position is valid
+        if (!IsValidPlacement(worldPosition))
+        {
+            Debug.LogWarning("Invalid placement");
+            return;
+        }
+
+        // Place the object
         GameObject newObject = Instantiate(database.objectData[selectedObjectIndex].Perfab);
-        newObject.transform.position = grid.CellToWorld(gridPosition);
+        newObject.transform.position = worldPosition;
     }
 
     private void StopPlacment()
@@ -52,7 +64,7 @@ public class Grid_PlacementSystem : MonoBehaviour
         selectedObjectIndex = -1;
         gridVisualization.SetActive(false);
         cellIndicator.SetActive(false);
-        inputManager.OnCliced -= PlaceStructur;
+        inputManager.OnCliced -= PlacesStructure;
         inputManager.OnExit -= StopPlacment;
     }
 
@@ -60,9 +72,27 @@ public class Grid_PlacementSystem : MonoBehaviour
     {
         if (selectedObjectIndex < 0)
             return;
+
         Vector3 mousePos = inputManager.GetSelectedMapPosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePos);
         mouseIndicator.transform.position = mousePos;
         cellIndicator.transform.position = grid.CellToWorld(gridPosition);
+    }
+
+    private bool IsValidPlacement(Vector3 positon)
+    {
+        if (IsOnccupied(positon))
+        {
+            Debug.LogWarning("Space is already occupied");
+            return false;
+        }
+
+        return true;
+    }
+
+    private bool IsOnccupied(Vector3 position)
+    {
+        Collider[] colliders = Physics.OverlapBox(position, new Vector3(0.5f, 0.5f, 0.5f), Quaternion.identity, objectLayer);
+        return colliders.Length > 0;
     }
 }
