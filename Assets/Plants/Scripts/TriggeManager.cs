@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class TriggeManager : MonoBehaviour
 {
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
 }

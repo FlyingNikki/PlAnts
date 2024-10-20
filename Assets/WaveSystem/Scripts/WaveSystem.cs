@@ -80,7 +80,7 @@ public class WaveSystem : MonoBehaviour
 
         enemyPoint_ID = Random.Range(0, spawnInfo[wave_ID].Enemyes.Length);
 
-        Instantiate(spawnInfo[wave_ID].Enemyes[enemyPoint_ID], spawnPoints[spawnPoint_ID]);
+        Instantiate(spawnInfo[wave_ID].Enemyes[enemyPoint_ID], spawnPoints[spawnPoint_ID].transform.position, spawnPoints[spawnPoint_ID].transform.rotation);
         aliveEnemys++;
     }
 }

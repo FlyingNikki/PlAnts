@@ -48,8 +48,12 @@ public class EnemyAI : MonoBehaviour
     public static void LookAtTarget (Transform enemyTransform, Transform target, float rotationSpeed)
     {
         Vector3 direction = (target.position - enemyTransform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        Vector3 zDirection = new Vector3(0, 0, direction.z);
 
-        enemyTransform.rotation = Quaternion.Slerp(enemyTransform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+        if (zDirection != Vector3.zero)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(zDirection, Vector3.up);
+            enemyTransform.rotation = Quaternion.Slerp(enemyTransform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+        }
     }
 }
