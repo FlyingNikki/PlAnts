@@ -5,6 +5,7 @@ using System.Globalization;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -14,42 +15,69 @@ public class Player : MonoBehaviour
     PlayerStats stats;
     Player shamane;
     bool dead;
-    
+    float speed;
+
+    //test
+    public float Ausdauer;
 
 
     void Start()
     {
         shamane = this;
-
+        stats = new PlayerStats();
+        speed = 0.75f;
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
-        dead = IsDead();
+        stats.En_Regeneration(2);
 
+        //test
+        Ausdauer = stats.Endurance;
     }
 
     //Movement
-    public void Movement() { 
+    public void Movement() {
+      
+
+        //runnning
+        Running();
      
+
+        if (Input.GetKey(KeyCode.D)) {
+            transform.position += new Vector3(5,0,0) * speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position += new Vector3(0, 0, -5) * speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += new Vector3(0, 0, 5) * speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += new Vector3(-5, 0, 0) * speed * Time.deltaTime;
+        }
     }
 
-    public void DayOver() {
-        stats.GetThirst();
-        stats.GetHunger();
-    }
-
-    public bool IsDead() {
-        if (stats.Hunger <= 0 || stats.Health <= 0 || stats.Thirst <= 0) { 
-            return true; 
-        }
-        else {
-            return false;
-        }
+    public void Running() {
         
+            if(Input.GetKey(KeyCode.LeftShift)) {
+               speed =1.5f;
+               stats.LoseEndurance();
+               if (stats.Endurance <= 0) {
+                speed = 0.75f;
+               }
+            }
+
     }
+
+    
+
+   
 
   
 }
