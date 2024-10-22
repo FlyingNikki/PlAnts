@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -16,9 +17,6 @@ public class PlayerStats : MonoBehaviour
     private float hunger;
     private float maxhunger;
 
-    private float thirst;
-    private float maxthirst;
-
     private int level;
 
     //props
@@ -28,11 +26,8 @@ public class PlayerStats : MonoBehaviour
     public float Endurance { get; set; } = 100;
     public float Maxendurance { get; set; } = 100;   
 
-    public float Hunger { get; set;} = 100;
-    public float Maxhunger { get; set; } = 100;
-
-    public float Thirst { get; set; } = 100;
-    public float Maxthirst { get; set; } = 100;
+    public float Hunger { get; set;} = 10;
+    public float Maxhunger { get; set; } = 10;
 
     public int Level { get; set; } = 1;
 
@@ -45,21 +40,19 @@ public class PlayerStats : MonoBehaviour
         maxendurance = Maxendurance;    
         hunger = Hunger;    
         maxhunger = Maxhunger;  
-        thirst = Thirst;    
-        maxthirst = Maxthirst;
         level = Level;
     }
 
-    public void LevelUp() {
-        Level++;
-        HealthUP();
-        EnduranceUP();
-    }
+   
 
-    public void HealthUP() {
+    public void LevelUP() {
         switch (Level) {
-            case 1:; break;
-            case 2:; break;
+            case 2: 
+                HungerUP(5);
+                EnduranceUP(20);
+                HealthUP(10);
+                Level++;
+                break;
             case 3:; break;
             case 4:; break;
             case 5:; break;
@@ -72,25 +65,43 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void EnduranceUP() { 
-     
-    }
-
-    public void GetHunger() {
-        Hunger = Hunger - 10;
-    }
+  
 
     public void Eat(float Food) {
         Hunger = Hunger + Food;
     }
 
-    public void GetThirst() { 
-        Thirst = Thirst - 10;
+    public void HungerUP(int AddedHunger)
+    {
+        Maxhunger += AddedHunger;
     }
 
-    public void Drink(float Drink){
-        Thirst = Thirst + Drink;    
+    public void HealthUP(int AddedHealth)
+    {
+        Maxhealth += AddedHealth;
     }
+    public void EnduranceUP(int AddedEndurace)
+    {
+        Maxendurance += AddedEndurace;
+    }
+
+    public void En_Regeneration(float Reg){
+        if (Endurance > Maxendurance)
+        {
+            Endurance += Reg * Time.deltaTime;
+        }
+    }
+    public void Hp_Regeneration(float Reg)
+    {
+        if (Health > Maxhealth) {
+            Health += Reg * Time.deltaTime;
+        }
+    }
+    public void LoseEndurance() { 
+         Endurance -= 15*Time.deltaTime;
+       
+    }
+
 }
 
 
