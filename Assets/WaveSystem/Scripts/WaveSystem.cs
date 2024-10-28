@@ -10,7 +10,7 @@ public class WaveSystem : MonoBehaviour
 
     [Space]
     [Header("-----------SpawnInfos--->")]
-    [SerializeField] private List<spawnInfo> spawnInfo;
+    [SerializeField] private List<spawnInfo> Waves;
 
     [HideInInspector] public int aliveEnemys;
 
@@ -50,10 +50,10 @@ public class WaveSystem : MonoBehaviour
 
     private IEnumerator EnemyGenerator()
     {
-        for (int i = 0; i < spawnInfo[wave_ID].amoutOfEnemys; i++)
+        for (int i = 0; i < Waves[wave_ID].amoutOfEnemys; i++)
         {
             GenrateRandomePoints();
-            yield return new WaitForSeconds(spawnInfo[wave_ID].timeBetweenSpawn);
+            yield return new WaitForSeconds(Waves[wave_ID].timeBetweenSpawn);
         }
 
         //Debug.Log("Loop Ends");
@@ -78,9 +78,9 @@ public class WaveSystem : MonoBehaviour
 
         lastSpawnPoint_ID = spawnPoint_ID;
 
-        enemyPoint_ID = Random.Range(0, spawnInfo[wave_ID].Enemyes.Length);
+        enemyPoint_ID = Random.Range(0, Waves[wave_ID].Enemyes.Length);
 
-        Instantiate(spawnInfo[wave_ID].Enemyes[enemyPoint_ID], spawnPoints[spawnPoint_ID].transform.position, spawnPoints[spawnPoint_ID].transform.rotation);
+        Instantiate(Waves[wave_ID].Enemyes[enemyPoint_ID], spawnPoints[spawnPoint_ID].transform.position, spawnPoints[spawnPoint_ID].transform.rotation);
         aliveEnemys++;
     }
 }
