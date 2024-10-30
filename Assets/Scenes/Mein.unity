@@ -947,6 +947,74 @@ Transform:
   - {fileID: 305221610}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8007093146043349892
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4110356664158030821, guid: 5ec0afb88082b9a49a0832b66b9682ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110356664158030821, guid: 5ec0afb88082b9a49a0832b66b9682ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110356664158030821, guid: 5ec0afb88082b9a49a0832b66b9682ea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110356664158030821, guid: 5ec0afb88082b9a49a0832b66b9682ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110356664158030821, guid: 5ec0afb88082b9a49a0832b66b9682ea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110356664158030821, guid: 5ec0afb88082b9a49a0832b66b9682ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110356664158030821, guid: 5ec0afb88082b9a49a0832b66b9682ea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110356664158030821, guid: 5ec0afb88082b9a49a0832b66b9682ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110356664158030821, guid: 5ec0afb88082b9a49a0832b66b9682ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110356664158030821, guid: 5ec0afb88082b9a49a0832b66b9682ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8417902520785571776, guid: 5ec0afb88082b9a49a0832b66b9682ea,
+        type: 3}
+      propertyPath: m_Name
+      value: SpikeShooter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5ec0afb88082b9a49a0832b66b9682ea, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -955,3 +1023,4 @@ SceneRoots:
   - {fileID: 343288923}
   - {fileID: 1947394425}
   - {fileID: 1598381217}
+  - {fileID: 8007093146043349892}
