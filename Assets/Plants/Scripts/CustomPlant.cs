@@ -71,12 +71,6 @@ public class CustomPlant : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, _plantData.PlantsData[plantID].Range);
-    }
-
     private IEnumerator FindNewTarget(float time)
     {
         yield return new WaitForSeconds(time);
@@ -84,5 +78,11 @@ public class CustomPlant : MonoBehaviour
         ActivePlants_AI.FindATarget(enemyTag, OrientationPoint, ref target, _plantData.PlantsData[plantID].Range);
 
         findTarget = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, _plantData.PlantsData[plantID].Range);
     }
 }
