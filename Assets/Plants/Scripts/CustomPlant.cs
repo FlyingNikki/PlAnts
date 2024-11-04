@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultPlant : MonoBehaviour
+public class CustomPlant : MonoBehaviour
 {
     [Header("----------Plant-Data----------")]
     [SerializeField] private ActiveAndPassive_SO _plantData;
 
     [Space]
-    [Header("---------->")]
+    [SerializeField] private bool _shooting;
+
     [SerializeField] private Transform shotingPoint;
     [SerializeField] private int plantID;
-    [SerializeField] private float Range;
     [SerializeField] private string enemyTag;
     [SerializeField] private Transform OrientationPoint;
     [SerializeField] private Transform partToRotat;
@@ -21,6 +21,14 @@ public class DefaultPlant : MonoBehaviour
     private Transform target;
 
     private void Update()
+    {
+        if (_shooting)
+            Shooting();
+
+        ActivePlants_AI.LookOn(target, OrientationPoint, partToRotat, _plantData.PlantsData[plantID].RotationSpeed);
+    }
+
+    private void Shooting()
     {
         if (findTarget)
         {
@@ -37,8 +45,6 @@ public class DefaultPlant : MonoBehaviour
             StopShooting();
             return;
         }
-
-        ActivePlants_AI.LookOn(target, OrientationPoint, partToRotat, _plantData.PlantsData[plantID].RotationSpeed);
     }
 
     private void StartShooting()
@@ -68,16 +74,15 @@ public class DefaultPlant : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, Range);
+        Gizmos.DrawWireSphere(transform.position, _plantData.PlantsData[plantID].Range);
     }
 
     private IEnumerator FindNewTarget(float time)
     {
         yield return new WaitForSeconds(time);
 
-        ActivePlants_AI.FindATarget(enemyTag, OrientationPoint, ref target, Range);
+        ActivePlants_AI.FindATarget(enemyTag, OrientationPoint, ref target, _plantData.PlantsData[plantID].Range);
 
         findTarget = true;
     }
-
 }

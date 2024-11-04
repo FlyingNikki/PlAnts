@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 4110356664158030821}
   - component: {fileID: 6304725875913316032}
   - component: {fileID: 2820418650815119167}
+  - component: {fileID: 2548966133822330767}
   m_Layer: 0
   m_Name: SpikeShooter
   m_TagString: Plant
@@ -181,8 +182,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.99300194, y: 1, z: 1}
-  m_Center: {x: 0.5038738, y: 0, z: 0}
+  m_Size: {x: 0.99300194, y: 0.8836348, z: 0.9462426}
+  m_Center: {x: 0.5038738, y: 0.4300545, z: 0.5106931}
 --- !u!65 &2820418650815119167
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -204,6 +205,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9160211, y: 0.66408384, z: 0.6255938}
   m_Center: {x: 0.5003747, y: 0.37090713, z: 0.48462826}
+--- !u!114 &2548966133822330767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8417902520785571776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb755852461a944d868baf786cb2fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plantData: {fileID: 0}
+  _shooting: 0
+  shotingPoint: {fileID: 0}
+  plantID: 0
+  Range: 0
+  enemyTag: 
+  OrientationPoint: {fileID: 0}
+  partToRotat: {fileID: 0}
 --- !u!1001 &3632911643428854436
 PrefabInstance:
   m_ObjectHideFlags: 0
