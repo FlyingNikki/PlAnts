@@ -12,8 +12,9 @@ public class CustomPlantEditor : Editor
         SerializedProperty plantData = serializedObject.FindProperty("_plantData");
         SerializedProperty shooting = serializedObject.FindProperty("_shooting");
         SerializedProperty shotingPoint = serializedObject.FindProperty("shotingPoint");
-        SerializedProperty plantID = serializedObject.FindProperty("plantID");
         SerializedProperty enemyTag = serializedObject.FindProperty("enemyTag");
+        SerializedProperty bullet = serializedObject.FindProperty("_Bullet");
+        SerializedProperty bulletDestroyTime = serializedObject.FindProperty("BulletDestroyTime");
         SerializedProperty orientationPoint = serializedObject.FindProperty("OrientationPoint");
         SerializedProperty partToRotat = serializedObject.FindProperty("partToRotat");
 
@@ -28,13 +29,13 @@ public class CustomPlantEditor : Editor
             EditorGUILayout.LabelField("-----LOL----->", EditorStyles.boldLabel);
 
             EditorGUILayout.PropertyField(shotingPoint);
-            EditorGUILayout.PropertyField(plantID);
             EditorGUILayout.PropertyField(enemyTag);
+            EditorGUILayout.PropertyField(bullet);
+            EditorGUILayout.PropertyField(bulletDestroyTime);
             EditorGUILayout.PropertyField(orientationPoint);
             EditorGUILayout.PropertyField(partToRotat);
         }
 
-        // Apply changes
         serializedObject.ApplyModifiedProperties();
     }
 }

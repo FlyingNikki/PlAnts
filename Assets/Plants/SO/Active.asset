@@ -18,18 +18,22 @@ MonoBehaviour:
     <ID>k__BackingField: 0
     <HP>k__BackingField: 20
     <Cost>k__BackingField: 15
+    <Range>k__BackingField: 5
     <RotationSpeed>k__BackingField: 10
     <timeBetweenAttacks>k__BackingField: 1.5
-    <bullet>k__BackingField: {fileID: 2562856824129850193, guid: d6d1848bc869c61418949894f7f0f26e,
-      type: 3}
-    <bulletDestroyTime>k__BackingField: 3
   - <Name>k__BackingField: Spike Shooter ID = 1
     <Tag>k__BackingField: Active
     <ID>k__BackingField: 1
     <HP>k__BackingField: 25
     <Cost>k__BackingField: 1
+    <Range>k__BackingField: 5
     <RotationSpeed>k__BackingField: 10
     <timeBetweenAttacks>k__BackingField: 2
-    <bullet>k__BackingField: {fileID: 2562856824129850193, guid: d6d1848bc869c61418949894f7f0f26e,
-      type: 3}
-    <bulletDestroyTime>k__BackingField: 4
+  - <Name>k__BackingField: Poisen Plant ID = 2
+    <Tag>k__BackingField: Active
+    <ID>k__BackingField: 2
+    <HP>k__BackingField: 25
+    <Cost>k__BackingField: 1
+    <Range>k__BackingField: 3
+    <RotationSpeed>k__BackingField: 0
+    <timeBetweenAttacks>k__BackingField: 3

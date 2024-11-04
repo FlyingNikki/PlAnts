@@ -11,21 +11,28 @@ public class CustomPlant : MonoBehaviour
     [SerializeField] private bool _shooting;
 
     [SerializeField] private Transform shotingPoint;
-    [SerializeField] private int plantID;
     [SerializeField] private string enemyTag;
+    [SerializeField] private GameObject _Bullet;
+    [SerializeField] private float BulletDestroyTime;
     [SerializeField] private Transform OrientationPoint;
     [SerializeField] private Transform partToRotat;
 
     private Coroutine shootingCoroutine;
+    private ID_Holder plantID;
     private bool findTarget = true;
     private Transform target;
+
+    private void Start()
+    {
+        plantID = GetComponent<ID_Holder>();
+    }
 
     private void Update()
     {
         if (_shooting)
             Shooting();
 
-        ActivePlants_AI.LookOn(target, OrientationPoint, partToRotat, _plantData.PlantsData[plantID].RotationSpeed);
+        ActivePlants_AI.LookOn(target, OrientationPoint, partToRotat, _plantData.PlantsData[plantID.ID].RotationSpeed);
     }
 
     private void Shooting()
@@ -53,10 +60,10 @@ public class CustomPlant : MonoBehaviour
         if (shootingCoroutine == null)
         {
             shootingCoroutine = StartCoroutine(ActivePlants_AI.ShootingSystem(
-                _plantData.PlantsData[plantID].timeBetweenAttacks,
-                _plantData.PlantsData[plantID].bullet,
+                _plantData.PlantsData[plantID.ID].timeBetweenAttacks,
+                _Bullet,
                 shotingPoint,
-                _plantData.PlantsData[plantID].bulletDestroyTime
+                BulletDestroyTime
             ));
         }
     }
@@ -75,7 +82,7 @@ public class CustomPlant : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        ActivePlants_AI.FindATarget(enemyTag, OrientationPoint, ref target, _plantData.PlantsData[plantID].Range);
+        ActivePlants_AI.FindATarget(enemyTag, OrientationPoint, ref target, _plantData.PlantsData[plantID.ID].Range);
 
         findTarget = true;
     }
@@ -83,6 +90,7 @@ public class CustomPlant : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, _plantData.PlantsData[plantID].Range);
+        if (plantID != null)
+            Gizmos.DrawWireSphere(transform.position, _plantData.PlantsData[plantID.ID].Range);
     }
 }
