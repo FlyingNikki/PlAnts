@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 636365517601850141}
   - component: {fileID: 4587347493323825059}
   - component: {fileID: 2754613020479986051}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PoisenPlant
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 834983757590807929}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6815586848449655408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ObjectModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 8206111840419939279}
   - component: {fileID: 2497665342934913232}
   - component: {fileID: 1429570024652961298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920903396593008344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PartToRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4558084074314914764}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OrientationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

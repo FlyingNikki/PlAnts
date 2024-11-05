@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7671070141539684191}
   - component: {fileID: 3620799510888270934}
   - component: {fileID: 5797545713990403178}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy test
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33738bf9aaec9345a277883ab5f990d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyData_SO: {fileID: 0}
+  enemyHP: 0
 --- !u!114 &3620799510888270934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +189,7 @@ GameObject:
   - component: {fileID: 2781423289154278581}
   - component: {fileID: 9053826576528891629}
   - component: {fileID: 4449813467877080436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}

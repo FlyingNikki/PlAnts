@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5700804150066191258}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ObjectModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1840588931224285258}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7481178042031278065}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PartToRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1879523503433997338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OrientationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 2820418650815119167}
   - component: {fileID: 8460270700216307427}
   - component: {fileID: 2548966133822330767}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpikeShooter
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -256,6 +256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpikeShooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422074933873337720, guid: 55830d3d50430894d9043061539acabb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1799162980188929986, guid: 55830d3d50430894d9043061539acabb,
         type: 3}
