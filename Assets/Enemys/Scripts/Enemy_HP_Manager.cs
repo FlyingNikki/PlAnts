@@ -14,7 +14,7 @@ public class Enemy_HP_Manager : MonoBehaviour
     {
         _ID = GetComponent<ID_Holder>();
 
-        //enemyHP = _enemyData_SO.enemyData[_ID.ID];
+        
     }
 
 }

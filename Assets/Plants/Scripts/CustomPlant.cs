@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class CustomPlant : MonoBehaviour
 
     [Space]
     [SerializeField] private bool _shooting;
+    [SerializeField] private bool _full_AOE;
 
     [SerializeField] private Transform shotingPoint;
     [SerializeField] private string enemyTag;
@@ -32,7 +34,15 @@ public class CustomPlant : MonoBehaviour
         if (_shooting)
             Shooting();
 
+        if (_full_AOE)
+            Full_AOE();
+
         ActivePlants_AI.LookOn(target, OrientationPoint, partToRotat, _plantData.PlantsData[plantID.ID].RotationSpeed);
+    }
+
+    private void Full_AOE()
+    {
+        Debug.Log("FULL_AOE");
     }
 
     private void Shooting()

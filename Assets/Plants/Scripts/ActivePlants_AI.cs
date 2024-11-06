@@ -63,7 +63,7 @@ public class ActivePlants_AI : MonoBehaviour
     //**************************************************************************************
     //*************************************** HP *******************************************
     //**************************************************************************************
-    public static void plant_HP(ref int hp, GameManager plant, bool getHited)
+    public static void plant_HP(ref int hp, GameObject plant, bool getHited)
     {
         if (getHited)
         {

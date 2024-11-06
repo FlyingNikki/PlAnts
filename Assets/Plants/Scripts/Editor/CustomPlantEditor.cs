@@ -17,16 +17,18 @@ public class CustomPlantEditor : Editor
         SerializedProperty bulletDestroyTime = serializedObject.FindProperty("BulletDestroyTime");
         SerializedProperty orientationPoint = serializedObject.FindProperty("OrientationPoint");
         SerializedProperty partToRotat = serializedObject.FindProperty("partToRotat");
+        SerializedProperty full_AOE = serializedObject.FindProperty("_full_AOE");
 
         // Draw default fields
         EditorGUILayout.PropertyField(plantData);
         EditorGUILayout.PropertyField(shooting);
+        EditorGUILayout.PropertyField(full_AOE);
 
-        // Check if _shooting is true to display the LOL fields
+        // Check if _shooting is true to display the SHOOTING fields
         if (shooting.boolValue)
         {
             EditorGUILayout.Space();
-            EditorGUILayout.LabelField("-----LOL----->", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("-----SHOOTING----->", EditorStyles.boldLabel);
 
             EditorGUILayout.PropertyField(shotingPoint);
             EditorGUILayout.PropertyField(enemyTag);
@@ -34,6 +36,15 @@ public class CustomPlantEditor : Editor
             EditorGUILayout.PropertyField(bulletDestroyTime);
             EditorGUILayout.PropertyField(orientationPoint);
             EditorGUILayout.PropertyField(partToRotat);
+        }
+
+        // Check if _full_AOE is true to display the FULL/AOE fields
+        if (full_AOE.boolValue)
+        {
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField("-----FULL/AOE----->", EditorStyles.boldLabel);
+
+
         }
 
         serializedObject.ApplyModifiedProperties();
