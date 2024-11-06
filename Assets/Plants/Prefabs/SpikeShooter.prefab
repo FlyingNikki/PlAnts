@@ -235,7 +235,7 @@ MonoBehaviour:
   _shooting: 1
   shotingPoint: {fileID: 1840588931224285258}
   enemyTag: Enemy
-  _Bullet: {fileID: 2562856824129850193, guid: d6d1848bc869c61418949894f7f0f26e, type: 3}
+  _Bullet: {fileID: 1780406101813233987, guid: c30e52237cfb13d4fb8b92cae92607e1, type: 3}
   BulletDestroyTime: 4
   OrientationPoint: {fileID: 1879523503433997338}
   partToRotat: {fileID: 7481178042031278065}
