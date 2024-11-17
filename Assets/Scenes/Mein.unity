@@ -747,11 +747,6 @@ MonoBehaviour:
   cellIndicator: {fileID: 1069850488}
   inputManager: {fileID: 949085770}
   grid: {fileID: 1283140392}
-  database: {fileID: 11400000, guid: 4d8425b98ef89694bbedbc1f042fd418, type: 2}
-  gridVisualization: {fileID: 122772214}
-  objectLayer:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!4 &493335883
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,9 +1041,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneCamera: {fileID: 870339253}
-  placementMask:
+  placementLayermask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
 --- !u!1 &1023913356
 GameObject:
   m_ObjectHideFlags: 0
