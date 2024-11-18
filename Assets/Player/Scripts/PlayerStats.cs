@@ -65,9 +65,11 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-  
 
-    public void Eat(float Food) {
+    public void LoseHunger(int getHunger) { 
+     Hunger -= getHunger;
+    }
+    public void Eat(int Food) {
         Hunger = Hunger + Food;
     }
 
@@ -97,9 +99,10 @@ public class PlayerStats : MonoBehaviour
             Health += Reg * Time.deltaTime;
         }
     }
-    public void LoseEndurance() { 
-         Endurance -= 15*Time.deltaTime;
-       
+    public void LoseEndurance() {
+        if (Endurance <=0) {
+            Endurance -= 15 * Time.deltaTime;
+        }
     }
 
 }
