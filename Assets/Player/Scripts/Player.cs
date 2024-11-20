@@ -48,31 +48,36 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D)) {
             transform.position += new Vector3(5,0,0) * speed * Time.deltaTime;
+            transform.position.Normalize();
         }
         if (Input.GetKey(KeyCode.S))
         {
             transform.position += new Vector3(0, 0, -5) * speed * Time.deltaTime;
+            transform.position.Normalize();
         }
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += new Vector3(0, 0, 5) * speed * Time.deltaTime;
+            transform.position.Normalize();
         }
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += new Vector3(-5, 0, 0) * speed * Time.deltaTime;
+            transform.position.Normalize();
         }
     }
 
     public void Running() {
-        
-            if(Input.GetKey(KeyCode.LeftShift)) {
-               speed =1.5f;
-               stats.LoseEndurance();
-               if (stats.Endurance <= 0) {
-                speed = 0.75f;
-               }
-            }
 
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 1.5f;
+
+        }
+        else {
+            speed = 0.75f;
+        }
+   
     }
 
     
