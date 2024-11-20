@@ -9,15 +9,26 @@ public class CustomPlantEditor : Editor
     {
         // Get the target script (CustomPlant) and serialized properties
         CustomPlant plant = (CustomPlant)target;
+
+        //default fields...
         SerializedProperty plantData = serializedObject.FindProperty("_plantData");
         SerializedProperty shooting = serializedObject.FindProperty("_shooting");
-        SerializedProperty shotingPoint = serializedObject.FindProperty("shotingPoint");
+        SerializedProperty full_AOE = serializedObject.FindProperty("_full_AOE");
+
+        //basic fields...
         SerializedProperty enemyTag = serializedObject.FindProperty("enemyTag");
-        SerializedProperty bullet = serializedObject.FindProperty("_Bullet");
-        SerializedProperty bulletDestroyTime = serializedObject.FindProperty("BulletDestroyTime");
         SerializedProperty orientationPoint = serializedObject.FindProperty("OrientationPoint");
         SerializedProperty partToRotat = serializedObject.FindProperty("partToRotat");
-        SerializedProperty full_AOE = serializedObject.FindProperty("_full_AOE");
+
+        //shooting fields...
+        SerializedProperty bullet = serializedObject.FindProperty("_Bullet");
+        SerializedProperty shotingPoint = serializedObject.FindProperty("shotingPoint");
+        SerializedProperty bulletDestroyTime = serializedObject.FindProperty("BulletDestroyTime");
+
+        //full-AOE fields...
+        SerializedProperty gas = serializedObject.FindProperty("gas");
+        SerializedProperty startPoint = serializedObject.FindProperty("shotingPoint");
+        SerializedProperty gasDestroyTime = serializedObject.FindProperty("gasDestroyTime");
 
         // Draw default fields
         EditorGUILayout.PropertyField(plantData);
@@ -30,12 +41,13 @@ public class CustomPlantEditor : Editor
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("-----SHOOTING----->", EditorStyles.boldLabel);
 
-            EditorGUILayout.PropertyField(shotingPoint);
             EditorGUILayout.PropertyField(enemyTag);
-            EditorGUILayout.PropertyField(bullet);
-            EditorGUILayout.PropertyField(bulletDestroyTime);
-            EditorGUILayout.PropertyField(orientationPoint);
             EditorGUILayout.PropertyField(partToRotat);
+            EditorGUILayout.PropertyField(orientationPoint);
+
+            EditorGUILayout.PropertyField(bullet);
+            EditorGUILayout.PropertyField(shotingPoint);
+            EditorGUILayout.PropertyField(bulletDestroyTime);
         }
 
         // Check if _full_AOE is true to display the FULL/AOE fields
@@ -44,7 +56,12 @@ public class CustomPlantEditor : Editor
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("-----FULL/AOE----->", EditorStyles.boldLabel);
 
+            EditorGUILayout.PropertyField(enemyTag);
+            EditorGUILayout.PropertyField(orientationPoint);
 
+            EditorGUILayout.PropertyField(gas);
+            EditorGUILayout.PropertyField(startPoint);
+            EditorGUILayout.PropertyField(gasDestroyTime);
         }
 
         serializedObject.ApplyModifiedProperties();

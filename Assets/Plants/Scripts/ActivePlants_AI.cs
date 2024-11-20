@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class ActivePlants_AI : MonoBehaviour
@@ -76,6 +77,20 @@ public class ActivePlants_AI : MonoBehaviour
             Debug.Log("Plant get destroyed!");
             Destroy(plant, .1f);
             return;
+        }
+    }
+
+    //**************************************************************************************
+    //******************************** FULL-AOE SYSTEM *************************************
+    //**************************************************************************************
+    public static IEnumerator full_AOE(Transform startPoint, float timeBetweenAttack, GameObject gas, float bulletDestroyTime)
+    {
+        while (true)
+        {
+            GameObject new_Bullet = Instantiate(gas, startPoint.position, startPoint.rotation);
+            Destroy(new_Bullet, bulletDestroyTime);
+
+            yield return new WaitForSeconds(timeBetweenAttack);
         }
     }
 }

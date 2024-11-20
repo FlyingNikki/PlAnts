@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class Plant_HpManager : MonoBehaviour
 {
-    [SerializeField] private ActivePlants_AI activePlant_AI;
     [SerializeField] private ActiveAndPassive_SO _plantsData;
     [SerializeField] private ID_Holder holder;
 
-    [HideInInspector] public bool getHit;
+    [HideInInspector] public bool plant_getHit;
+
+    private int newHP;
+
+    private void Start()
+    {
+        newHP = _plantsData.PlantsData[holder.ID].HP;
+        Debug.Log(newHP);
+    }
 
     private void Update()
     {
-        //activePlant_AI.plant_HP(_plantsData.PlantsData[holder.ID].HP, gameObject, getHit);
+        ActivePlants_AI.plant_HP(ref newHP, gameObject, plant_getHit);
     }
 }

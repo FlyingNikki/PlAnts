@@ -20,5 +20,6 @@ public class PlantsData
     [field: SerializeField] public int Cost {  get; private set; }
     [field: SerializeField] public int Range { get; private set; } = 5;
     [field: SerializeField] public float RotationSpeed { get; private set; } = 10;
+    [field: SerializeField] public float Damage { get; private set; }
     [field: SerializeField] public float timeBetweenAttacks {  get; private set; }
 }

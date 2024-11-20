@@ -20,20 +20,23 @@ MonoBehaviour:
     <Cost>k__BackingField: 15
     <Range>k__BackingField: 5
     <RotationSpeed>k__BackingField: 10
+    <Damage>k__BackingField: 0
     <timeBetweenAttacks>k__BackingField: 1.5
   - <Name>k__BackingField: Spike Shooter ID = 1
     <Tag>k__BackingField: Active
     <ID>k__BackingField: 1
-    <HP>k__BackingField: 25
+    <HP>k__BackingField: 50
     <Cost>k__BackingField: 1
-    <Range>k__BackingField: 5
+    <Range>k__BackingField: 7
     <RotationSpeed>k__BackingField: 10
+    <Damage>k__BackingField: 2
     <timeBetweenAttacks>k__BackingField: 2
   - <Name>k__BackingField: Poisen Plant ID = 2
     <Tag>k__BackingField: Active
     <ID>k__BackingField: 2
-    <HP>k__BackingField: 25
+    <HP>k__BackingField: 50
     <Cost>k__BackingField: 1
     <Range>k__BackingField: 3
     <RotationSpeed>k__BackingField: 0
-    <timeBetweenAttacks>k__BackingField: 3
+    <Damage>k__BackingField: 0.5
+    <timeBetweenAttacks>k__BackingField: 5

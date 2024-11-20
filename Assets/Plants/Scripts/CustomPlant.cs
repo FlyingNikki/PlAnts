@@ -12,14 +12,24 @@ public class CustomPlant : MonoBehaviour
     [SerializeField] private bool _shooting;
     [SerializeField] private bool _full_AOE;
 
-    [SerializeField] private Transform shotingPoint;
     [SerializeField] private string enemyTag;
-    [SerializeField] private GameObject _Bullet;
-    [SerializeField] private float BulletDestroyTime;
     [SerializeField] private Transform OrientationPoint;
     [SerializeField] private Transform partToRotat;
 
+    // Shooting...
+    [SerializeField] private Transform shotingPoint;
+    [SerializeField] private float BulletDestroyTime;
+    [SerializeField] private GameObject _Bullet;
+
+
+    // Full AOE...
+    [SerializeField] private GameObject gas;
+    [SerializeField] private Transform startPoint;
+    [SerializeField] private float gasDestroyTime;
+
+
     private Coroutine shootingCoroutine;
+    private Coroutine full_AOE_Coroutine;
     private ID_Holder plantID;
     private bool findTarget = true;
     private Transform target;
@@ -42,7 +52,22 @@ public class CustomPlant : MonoBehaviour
 
     private void Full_AOE()
     {
-        Debug.Log("FULL_AOE");
+        if (findTarget)
+        {
+            StartCoroutine(FindNewTarget(.5f));
+            findTarget = false;
+        }
+
+        if (target != null)
+        {
+            StartFull_AOE_Attack();
+        }
+        else if (target == null)
+        {
+            StopFull_AOR_Attack();
+            return;
+        }
+        
     }
 
     private void Shooting()
@@ -64,6 +89,7 @@ public class CustomPlant : MonoBehaviour
         }
     }
 
+    //-------------SHOOTING----------->
     private void StartShooting()
     {
         // Ensure that shooting is not already in progress
@@ -85,6 +111,26 @@ public class CustomPlant : MonoBehaviour
         {
             StopCoroutine(shootingCoroutine);
             shootingCoroutine = null;
+        }
+    }
+
+    //-------------AOE----------->
+    private void StartFull_AOE_Attack()
+    {
+        if (full_AOE_Coroutine == null)
+        {
+            full_AOE_Coroutine = StartCoroutine(ActivePlants_AI.full_AOE(startPoint, _plantData.PlantsData[plantID.ID].timeBetweenAttacks,
+                gas,
+                gasDestroyTime));
+        }
+    }
+
+    private void StopFull_AOR_Attack()
+    {
+        if (full_AOE_Coroutine != null)
+        {
+            StopCoroutine(full_AOE_Coroutine);
+            full_AOE_Coroutine = null;
         }
     }
 

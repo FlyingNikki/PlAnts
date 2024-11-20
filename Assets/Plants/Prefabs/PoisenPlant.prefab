@@ -107,12 +107,15 @@ MonoBehaviour:
   _plantData: {fileID: 11400000, guid: 23900653967840742a7b64944243d552, type: 2}
   _shooting: 0
   _full_AOE: 1
-  shotingPoint: {fileID: 0}
   enemyTag: Enemy
-  _Bullet: {fileID: 0}
-  BulletDestroyTime: 0
   OrientationPoint: {fileID: 4558084074314914764}
   partToRotat: {fileID: 920903396593008344}
+  shotingPoint: {fileID: 5861579881595311173}
+  BulletDestroyTime: 0
+  _Bullet: {fileID: 0}
+  gas: {fileID: 0}
+  startPoint: {fileID: 0}
+  gasDestroyTime: 0
 --- !u!114 &8217989911469406250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,10 +128,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f260a935b296b34ca97785677c6bc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activePlant_AI: {fileID: 0}
-  _plantsData: {fileID: 0}
-  holder: {fileID: 0}
+  _plantsData: {fileID: 11400000, guid: 23900653967840742a7b64944243d552, type: 2}
+  holder: {fileID: 4587347493323825059}
   getHit: 0
+--- !u!1 &6073984926057457190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5861579881595311173}
+  m_Layer: 8
+  m_Name: StartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5861579881595311173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6073984926057457190}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.494, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6815586848449655408}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6988324050184764745
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +193,7 @@ Transform:
   m_Children:
   - {fileID: 920903396593008344}
   - {fileID: 4558084074314914764}
+  - {fileID: 5861579881595311173}
   m_Father: {fileID: 8308147033110850979}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8174207480239442870
@@ -233,6 +267,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 920903396593008344}
     m_Modifications:
+    - target: {fileID: 7153332657122882622, guid: 20887013ff7cf0d4ca9fa8f29a1ffeff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf7e9ddc5563d67418ccc553cc7d0c2e, type: 2}
     - target: {fileID: 8290725568490327889, guid: 20887013ff7cf0d4ca9fa8f29a1ffeff,
         type: 3}
       propertyPath: m_LocalPosition.x
