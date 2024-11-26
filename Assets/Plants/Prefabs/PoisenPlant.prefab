@@ -115,7 +115,7 @@ MonoBehaviour:
   _Bullet: {fileID: 0}
   gas: {fileID: 0}
   startPoint: {fileID: 0}
-  gasDestroyTime: 0
+  gasDestroyTime: 4
 --- !u!114 &8217989911469406250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,8 +129,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantsData: {fileID: 11400000, guid: 23900653967840742a7b64944243d552, type: 2}
-  holder: {fileID: 4587347493323825059}
-  getHit: 0
+  _enemyData: {fileID: 0}
+  plant: 1
+  enemy: 0
+  plant_getHit: 0
+  enemy_getHit: 0
+  getedDamage: 0
 --- !u!1 &6073984926057457190
 GameObject:
   m_ObjectHideFlags: 0

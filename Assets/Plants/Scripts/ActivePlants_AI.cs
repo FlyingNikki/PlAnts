@@ -62,25 +62,6 @@ public class ActivePlants_AI : MonoBehaviour
     }
 
     //**************************************************************************************
-    //*************************************** HP *******************************************
-    //**************************************************************************************
-    public static void plant_HP(ref int hp, GameObject plant, bool getHited)
-    {
-        if (getHited)
-        {
-            hp--;
-            getHited = false;
-        }
-
-        if (hp <= 0)
-        {
-            Debug.Log("Plant get destroyed!");
-            Destroy(plant, .1f);
-            return;
-        }
-    }
-
-    //**************************************************************************************
     //******************************** FULL-AOE SYSTEM *************************************
     //**************************************************************************************
     public static IEnumerator full_AOE(Transform startPoint, float timeBetweenAttack, GameObject gas, float bulletDestroyTime)

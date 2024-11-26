@@ -54,8 +54,9 @@ public class DefaultEnemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag(_enemyData.enemyData[_ID.ID].TargetTag))
         {
-            Plant_HpManager plantHP = other.GetComponent<Plant_HpManager>();
+            HpManager plantHP = other.GetComponent<HpManager>();
             plantHP.plant_getHit = true;
+            plantHP.getedDamage = _enemyData.enemyData[_ID.ID].Damage;
         }
     }
 

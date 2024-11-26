@@ -235,12 +235,15 @@ MonoBehaviour:
   _plantData: {fileID: 11400000, guid: 23900653967840742a7b64944243d552, type: 2}
   _shooting: 1
   _full_AOE: 0
-  shotingPoint: {fileID: 1840588931224285258}
   enemyTag: Enemy
-  _Bullet: {fileID: 1780406101813233987, guid: c30e52237cfb13d4fb8b92cae92607e1, type: 3}
-  BulletDestroyTime: 4
   OrientationPoint: {fileID: 1879523503433997338}
   partToRotat: {fileID: 7481178042031278065}
+  shotingPoint: {fileID: 1840588931224285258}
+  BulletDestroyTime: 4
+  _Bullet: {fileID: 1780406101813233987, guid: c30e52237cfb13d4fb8b92cae92607e1, type: 3}
+  gas: {fileID: 0}
+  startPoint: {fileID: 0}
+  gasDestroyTime: 0
 --- !u!114 &4501775432582882097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,6 +256,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f260a935b296b34ca97785677c6bc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _plantsData: {fileID: 11400000, guid: 23900653967840742a7b64944243d552, type: 2}
+  _enemyData: {fileID: 0}
+  plant: 1
+  enemy: 0
+  plant_getHit: 0
+  enemy_getHit: 0
+  getedDamage: 0
 --- !u!1001 &3632911643428854436
 PrefabInstance:
   m_ObjectHideFlags: 0
