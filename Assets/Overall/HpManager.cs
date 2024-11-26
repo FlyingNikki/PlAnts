@@ -22,10 +22,11 @@ public class HpManager : MonoBehaviour
 
     private void Start()
     {
+        holder = GetComponent<ID_Holder>();
+        /*
         Plant_newHP = _plantsData.PlantsData[holder.ID].HP;
         Enemy_newHP = _enemyData.enemyData[holder.ID].HP;
-        
-        holder = GetComponent<ID_Holder>();
+        */
     }
 
     private void Update()

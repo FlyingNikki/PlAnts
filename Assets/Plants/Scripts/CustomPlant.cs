@@ -47,7 +47,8 @@ public class CustomPlant : MonoBehaviour
         if (_full_AOE)
             Full_AOE();
 
-        ActivePlants_AI.LookOn(target, OrientationPoint, partToRotat, _plantData.PlantsData[plantID.ID].RotationSpeed);
+        if (target != null)
+            ActivePlants_AI.LookOn(target, OrientationPoint, partToRotat, _plantData.PlantsData[plantID.ID].RotationSpeed);
     }
 
     private void Full_AOE()

@@ -11,8 +11,20 @@ public class Grid_InputManager : MonoBehaviour
 
     private Vector3 lastPosition;
 
+    public event Action OnClicked, OnExit;
 
-    public Vector3 GetSelectedMapPostion()
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+            OnClicked?.Invoke();
+        if (Input.GetKeyDown(KeyCode.Escape))
+            OnExit?.Invoke();
+    }
+
+    public bool IsPointerOverUI()
+        => EventSystem.current.IsPointerOverGameObject();
+
+    public Vector3 GetSelectedMapPosition()
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = sceneCamera.nearClipPlane;

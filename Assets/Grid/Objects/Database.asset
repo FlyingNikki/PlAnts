@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Database
   m_EditorClassIdentifier: 
   objectData:
-  - <Name>k__BackingField: Default Plant
+  - <Name>k__BackingField: Def Plant
     <ID>k__BackingField: 0
     <Size>k__BackingField: {x: 1, y: 1}
     <Perfab>k__BackingField: {fileID: 8715221581508189051, guid: e6da8a3f717d0e84d895b1a5e9f2e9a1,
