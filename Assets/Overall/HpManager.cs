@@ -23,10 +23,12 @@ public class HpManager : MonoBehaviour
     private void Start()
     {
         holder = GetComponent<ID_Holder>();
-        /*
-        Plant_newHP = _plantsData.PlantsData[holder.ID].HP;
-        Enemy_newHP = _enemyData.enemyData[holder.ID].HP;
-        */
+
+        if (plant)
+            Plant_newHP = _plantsData.PlantsData[holder.ID].HP;
+
+        if (enemy)
+            Enemy_newHP = _enemyData.enemyData[holder.ID].HP;
     }
 
     private void Update()
@@ -48,7 +50,7 @@ public class HpManager : MonoBehaviour
 
         if (hp <= 0)
         {
-            Debug.Log("Enemy get destroyed!");
+            Debug.Log("Plant get destroyed!");
             Destroy(plant, .1f);
             return;
         }
