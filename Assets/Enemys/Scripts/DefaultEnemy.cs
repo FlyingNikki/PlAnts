@@ -46,7 +46,7 @@ public class DefaultEnemy : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, _enemyData.enemyData[_ID.ID].Range);
+        Gizmos.DrawWireSphere(transform.position, _enemyData.enemyData[holder.ID].Range);
     }
     */
 

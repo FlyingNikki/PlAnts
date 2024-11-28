@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1131806538927464341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4865222589485336503}
+  m_Layer: 7
+  m_Name: PartToRotat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4865222589485336503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131806538927464341}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 839113192948147181}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6274996196169027938
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,7 +45,7 @@ GameObject:
   - component: {fileID: 3306085671824931081}
   - component: {fileID: 8292033888435229420}
   - component: {fileID: 3620799510888270934}
-  - component: {fileID: 5797545713990403178}
+  - component: {fileID: 717197087858266326}
   m_Layer: 7
   m_Name: Enemy test
   m_TagString: Enemy
@@ -36,6 +67,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3485706666610888579}
+  - {fileID: 4865222589485336503}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3274865959625794544
@@ -149,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
---- !u!114 &5797545713990403178
+--- !u!114 &717197087858266326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,10 +190,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6274996196169027938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2b664551a32dff439bd674748aee928, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d75e868bfd5b26409fa2c5c19b74d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 7ae08706eb5cb7c4a81ecc095b43a42e, type: 2}
+  _walking: 1
+  _flying: 0
+  PartToRotat: {fileID: 4865222589485336503}
+  rb: {fileID: 8292033888435229420}
+  holder: {fileID: 3620799510888270934}
+  walkSpeed: 2
+  ComingSoon: 0
 --- !u!1 &7359104536975457476
 GameObject:
   m_ObjectHideFlags: 0
