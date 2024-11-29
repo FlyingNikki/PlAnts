@@ -16,9 +16,16 @@ public class Grid_PlacementSystem : MonoBehaviour
     [SerializeField] private GameObject gridVisualization;
     private int selectedObjectIndex = -1;
 
+    private GridData spikePlant, poisenPlant;
+    private Renderer previewRenderer;
+    private List<GameObject> placedGameObject = new();
+
     private void Start()
     {
         StopPlacement();
+        spikePlant = new();
+        poisenPlant = new();
+        previewRenderer = cellIndicator.GetComponentInChildren<Renderer>();
     }
 
     public void StartPlacement(int ID)
@@ -47,8 +54,23 @@ public class Grid_PlacementSystem : MonoBehaviour
         }
         Vector3 mousePosition = inputManager.GetSelectedMapPosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+
+        bool placementValidity = CheckPlacementValidity(gridPosition, selectedObjectIndex);
+        if (placementValidity == false)
+            return;
+
         GameObject newObject = Instantiate(database.objectData[selectedObjectIndex].Perfab);
         newObject.transform.position = grid.CellToWorld(gridPosition);
+        placedGameObject.Add(newObject);
+        GridData selectedData = database.objectData[selectedObjectIndex].ID == 0 ? spikePlant : poisenPlant;
+        selectedData.AddObjectAt(gridPosition, database.objectData[selectedObjectIndex].Size, database.objectData[selectedObjectIndex].ID, placedGameObject.Count - 1);
+    }
+
+    private bool CheckPlacementValidity(Vector3Int gridPosition, int selectedObjectIndex)
+    {
+        GridData selectedData = database.objectData[selectedObjectIndex].ID == 0 ? spikePlant : poisenPlant;
+
+        return selectedData.CanPlaceObjectAt(gridPosition, database.objectData[selectedObjectIndex].Size);
     }
 
     private void StopPlacement()
@@ -69,6 +91,10 @@ public class Grid_PlacementSystem : MonoBehaviour
 
         Vector3 mousePosition = inputManager.GetSelectedMapPosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+
+        bool placementValidity = CheckPlacementValidity(gridPosition, selectedObjectIndex);
+        previewRenderer.material.color = placementValidity ? Color.green : Color.red;
+
         mouseIndicator.transform.position = mousePosition;
         cellIndicator.transform.position = grid.CellToWorld(gridPosition);
     }
