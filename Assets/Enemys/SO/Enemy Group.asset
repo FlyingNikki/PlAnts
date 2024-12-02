@@ -13,13 +13,25 @@ MonoBehaviour:
   m_Name: Enemy Group
   m_EditorClassIdentifier: 
   enemyData:
-  - <Name>k__BackingField: DefaultEnemy
+  - <Name>k__BackingField: DefaultEnemy ID = 0
     <Tag>k__BackingField: Enemy
     <TargetTag>k__BackingField: Plant
     <BaseTag>k__BackingField: Base
     <Damage>k__BackingField: 0
     <HP>k__BackingField: 0
+    <ID>k__BackingField: 0
     <Range>k__BackingField: 5
     <Speed>k__BackingField: 5
     <RotationSpeed>k__BackingField: 10
     <TimeBetweenAttacks>k__BackingField: 0
+  - <Name>k__BackingField: Ground ID = 1
+    <Tag>k__BackingField: Enemy
+    <TargetTag>k__BackingField: Plant
+    <BaseTag>k__BackingField: Base
+    <Damage>k__BackingField: 2
+    <HP>k__BackingField: 15
+    <ID>k__BackingField: 1
+    <Range>k__BackingField: 2
+    <Speed>k__BackingField: 1.5
+    <RotationSpeed>k__BackingField: 10
+    <TimeBetweenAttacks>k__BackingField: 1.5

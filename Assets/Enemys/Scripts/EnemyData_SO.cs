@@ -20,6 +20,7 @@ public class EnemyData
 
     [field: SerializeField] public float Damage { get; private set; }
     [field: SerializeField] public int HP { get; private set; }
+    [field: SerializeField] public int ID { get; private set; }
     [field: SerializeField] public float Range { get; private set; } = 7;
     [field: SerializeField] public float Speed { get; private set; } = 10;
     [field: SerializeField] public float RotationSpeed { get; private set; } = 15;
